@@ -1,6 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import logo from './logo.svg';
 import './App.css';
 import Comment from './Comment.js';
 import './bootstrap.css';
@@ -12,33 +10,8 @@ var ImageFile = ImageUpload;
 
 class App extends React.Component {
 
-
-/*
-    getInitialState() {
-           return(
-               {comments : [
-                   {name:"m1",image:"i1",description:"d1"},
-                   {name:"m2",image:"i2",description:"d2"},
-                   {name:"m3",image:"i3",description:"m3"}
-               ]}
-           );
-    }
-*/
     constructor(props, context) {
         super(props, context);
-
-      //  Comment.js.constructor(props, context);
-/*
-        this.state = {
-            comments : [
-                {name:"n1",image:logo,description:"d1"},
-                {name:"n2",image:logo,description:"d2"},
-                {name:"n3",image:logo,description:"d3"},
-                {name:"n4",image:logo,description:"d4"}
-                ]
-        }
-        */
-
 
         this.state = {
             comments : [], file :"" , src :""
@@ -53,18 +26,15 @@ class App extends React.Component {
     }
 
     addComment(text) {
-        // do something
         console.log("Adding Comment");
         var array = this.state.comments;
         array.push({name : this.refs.lib.value ,image : this.state.file ,description : this.refs.desc.value });
         this.setState({comments : array});
         this.refs.lib.value = "" ;
-       // this.refs.imag.file = null ;
         this.refs.desc.value = "" ;
     }
 
     updateComment(text,i) {
-        // do something
         console.log("updating Comment");
         var array = this.state.comments;
         array[i] = {name:text.name,image:text.image,description:text.description};
@@ -72,21 +42,19 @@ class App extends React.Component {
     }
 
     removeComment(i) {
-        // do something
         console.log("updating Comment");
         var array = this.state.comments;
         array.splice(i,1);
         this.setState({comments : array});
     }
     eachComment(text,i) {
-        // do something
             return(<Com index={i} key={i} deleteComment={this.removeComment} updateComment={this.updateComment} name={text.name} image={text.image} description={text.description} ></Com>)
     }
 
     getData(f , s){
         var array = this.state.comments;
         this.setState({comments : array, file:f , src:s });
-        console.log("comments : " + array + " ,  file : " + f + " , src : " + s);
+        //console.log("comments : " + array + " ,  file : " + f + " , src : " + s);
     }
 
 
