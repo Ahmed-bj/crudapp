@@ -2,19 +2,8 @@
  * Created by SOTUSOFT on 17/07/2017.
  */
 import React from 'react';
-//import PropTypes from 'prop-types';
-//import logo from './logo.svg';
 import './App.css';
 import './bootstrap.css';
-//import './imageUploadService.js';
-//import './registerServiceWorker.js';
-//import $ from 'jquery';
-//var _ = require('lodash')
-//var Dropzone = require('react-dropzone')
-
-//var download = require('./download.js')
-//var uploadFile = require('./uploadFile')
-
 import fs from 'fs';
 
 function uploadFile(url, data) {
@@ -43,15 +32,8 @@ class ImageUpload extends React.Component {
 
     _handleSubmit(e) {
         e.preventDefault();
-        // TODO: do something with -> this.state.file
-        console.log('handle uploading-', this.state.imagePreviewUrl);
-        console.log('handle uploading-', this.state.file);
-       // this.uploadImage(this.state.file);
-
-       // var css = ``;
-      //  download(this.state.file, "imagePreviewUrl", "text/css");
-
-       // uploadFile(this.state.imagePreviewUrl,this.state.file);
+        //console.log('handle uploading-', this.state.imagePreviewUrl);
+        //console.log('handle uploading-', this.state.file);
 
     }
 
@@ -90,7 +72,5 @@ class ImageUpload extends React.Component {
             </div>
         )
     }
-  /* <!-- <button id="upload" className="submitButton" type="submit" onClick={(e)=>this._handleSubmit(e)} >Upload Image</button> --> */
-} /* <!-- <div className="imgPreview">{$imagePreview}</div> --> */
-
+  }
 export default ImageUpload;
