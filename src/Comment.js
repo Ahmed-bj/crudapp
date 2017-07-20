@@ -1,6 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-//import logo from './logo.svg';
 import './App.css';
 import './bootstrap.css';
 
@@ -10,15 +8,12 @@ class Comment extends React.Component {
 
     getInitialState() {
         this.setState({editing : false});
-       // console.log("editing : " + this.state.editing);
     }
 
     constructor() {
         super();
 
         this.state = {editing : false};
-       // console.log("editing : " + this.state.editing);
-
         this.edit = this.edit.bind(this);
         this.remove = this.remove.bind(this);
         this.save = this.save.bind(this);
@@ -27,16 +22,9 @@ class Comment extends React.Component {
     }
 
     edit() {
-        // do something
-        //  this.setState({editing : true}); // Cannot set property 'state' of null
-        //  this.state = {editing : true};  // Cannot set property 'state' of null
-        //  this.state.editing = true;     // Cannot set property 'state' of null
-        this.setState({editing : true});
-        //console.log("editing : " + this.state.editing);
-
-    }
+              this.setState({editing : true});
+           }
     remove() {
-        // do something
         console.log("Remove comment");
         this.props.deleteComment(this.props.index);
     }
@@ -44,22 +32,17 @@ class Comment extends React.Component {
         var nameVar = this.refs.na.value;
         var imageVar = this.refs.im.value;
         var descriptionVar = this.refs.de.value;
-        // do something
         console.log("name : " + nameVar + " image : " + imageVar  + " description : " + descriptionVar )
-        //this.state = {editing : false};
         this.setState({editing : false});
-       // console.log("editing : " + this.state.editing);
         var objet = {name : this.refs.na.value ,image : this.refs.im.value ,description : this.refs.de.value };
         this.props.updateComment(objet,this.props.index);
     }
     add() {
-        // do something
         this.state = {editing : false};
         console.log("editing : " + this.state.editing);
     }
     renderNormal() {
-        // do something
-        return (
+         return (
             <div className="col-md-4">
                 <div className="panel panel-default">
                     <div className="centerEle panel-heading"><h3> {this.props.name} </h3></div>
@@ -74,8 +57,7 @@ class Comment extends React.Component {
         );
     }
     renderForm() {
-        // do something
-        return (
+         return (
             <div>
                  <div className="panel-body">
                      <div className="col-md-4">
@@ -91,8 +73,8 @@ class Comment extends React.Component {
             </div>
         );
     }
-    render() {
 
+    render() {
         if(this.state.editing){
             return (this.renderForm());
         }else{
